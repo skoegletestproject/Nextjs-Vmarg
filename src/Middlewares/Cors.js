@@ -1,7 +1,7 @@
 import Cors from "cors";
 
 const corsMiddleware = Cors({
-  origin: "*", // Change this to your frontend URL for security
+  origin: "*", 
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
 });

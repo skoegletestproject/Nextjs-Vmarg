@@ -137,7 +137,7 @@ const GetRealtime = async (req, res) => {
 export default async function handler(req, res) {
   await connectDB();
 
-  return verifyDevice(req, res, async () => {
+
     const { method, url } = req;
     const action = req.query.action;
     if (method === "GET") {
@@ -152,5 +152,5 @@ export default async function handler(req, res) {
       res.setHeader("Allow", ["GET", "POST", "PUT"]);
       return res.status(405).json({ message: `Method ${method} Not Allowed` });
     }
-  });
+ 
 }

@@ -5,7 +5,6 @@ import Realtime from "@/Database/Models/Realtime";
 import Log from "@/Database/Models/Logs";
 import haversineDistance from "@/Utils/haversineDistance";
 
-// ✅ Device Logs API
 const DeviceLogs = async (req, res) => {
   try {
     const { deviceName, latitude, longitude, date, time, homelat, homelong, rad } = req.body;
@@ -53,7 +52,7 @@ const DeviceLogs = async (req, res) => {
   }
 };
 
-// ✅ Add Device to Real-time Collection
+
 const addDeviceRealtime = async (req, res) => {
   try {
     const { deviceName, latitude, longitude, date, time } = req.body;
@@ -72,7 +71,7 @@ const addDeviceRealtime = async (req, res) => {
   }
 };
 
-// ✅ Update Real-time Device Data
+
 const DeviceRealTime = async (req, res) => {
   try {
     const { deviceName } = req.params;
@@ -90,7 +89,7 @@ const DeviceRealTime = async (req, res) => {
   }
 };
 
-// ✅ Get Device Logs
+
 const GetDeviceLogs = async (req, res) => {
   const { deviceName, fromDate, toDate, fromTime, toTime } = req.query;
 

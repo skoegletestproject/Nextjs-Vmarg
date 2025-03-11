@@ -10,7 +10,7 @@ const verifyDevice = async (req, res, next) => {
         const authHeader = req.headers.authorization || "";
         const cookies = cookie.parse(req.headers.cookie || "");
         const token = authHeader.startsWith("Bearer ") ? authHeader.split(" ")[1] : cookies.auth_token; 
-
+console.log(token);
         if (!token) {
             return res.status(401).json({ message: "Unauthorized: No token provided", valid: false });
         }
@@ -19,6 +19,7 @@ const verifyDevice = async (req, res, next) => {
         let decoded;
         try {
             decoded = jwt.verify(token, process.env.JWT_SEC);
+            console.log(decoded);
         } catch (err) {
             return res.status(401).json({ message: "Unauthorized: Invalid or expired token", valid: false });
         }
